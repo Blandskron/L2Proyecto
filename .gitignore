@@ -1,0 +1,11 @@
+# Ignore el entorno virtual de Python
+proyecto2/
+
+# Ignorar archivos generados por entornos virtuales
+*.pyc
+*.pyo
+__pycache__/
+
+# Ignorar archivos específicos de entornos virtuales de Python
+pip-log.txt
+pip-delete-this-directory.txt
