@@ -9,3 +9,6 @@ __pycache__/
 # Ignorar archivos específicos de entornos virtuales de Python
 pip-log.txt
 pip-delete-this-directory.txt
+
+# Ignorar la carpeta Lib/ del entorno virtual
+proyecto2/Lib/
