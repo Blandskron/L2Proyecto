@@ -6,6 +6,9 @@ python -m venv proyecto2
 cd proyecto2
 Scripts\activate
 
+# Salir de la carpeta
+cd ..
+
 # Instalar Django
 pip install django
 
