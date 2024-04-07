@@ -1,4 +1,4 @@
-Aquí tienes una versión más amigable y profesional del archivo README.md:
+# Django
 
 ---
 
