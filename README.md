@@ -1,52 +1,105 @@
-# L2Proyecto
-# Crear un entorno virtual
-python -m venv proyecto2
+Aquí tienes una versión más amigable y profesional del archivo README.md:
 
-# Activar el entorno virtual (en Windows)
+---
+
+# **Proyecto L2: Creación de Entorno Virtual y Configuración Inicial**
+
+Este proyecto tiene como objetivo guiar paso a paso la configuración inicial de un entorno virtual y la creación de un proyecto básico en Django.
+
+## **1. Crear un Entorno Virtual**
+
+Para mantener la independencia del proyecto, se recomienda crear un entorno virtual dedicado. Ejecuta el siguiente comando:
+
+```bash
+python -m venv proyecto2
+```
+
+## **2. Activar el Entorno Virtual (Windows)**
+
+Ingresa al directorio del proyecto y activa el entorno virtual con:
+
+```bash
 cd proyecto2
 Scripts\activate
+```
 
-# Salir de la carpeta
-cd ..
+## **3. Instalar Django**
 
-# Instalar Django
+Instala Django dentro del entorno virtual:
+
+```bash
 pip install django
+```
 
-# Verificar las dependencias instaladas
+## **4. Verificar Dependencias Instaladas**
+
+Para asegurarte de que Django se haya instalado correctamente, ejecuta:
+
+```bash
 pip freeze
+```
 
-# Crear un nuevo proyecto Django
+## **5. Crear un Nuevo Proyecto Django**
+
+Crea un nuevo proyecto Django con:
+
+```bash
 django-admin startproject helloworld
+```
 
-# Cambiar al directorio del proyecto
+## **6. Crear una Nueva Aplicación**
+
+Dentro del proyecto, crea una nueva aplicación con:
+
+```bash
 cd helloworld
-
-# Crear una nueva aplicación dentro del proyecto
 python manage.py startapp myhelloapp
+```
 
-# Agregar la aplicación al archivo settings.py
+## **7. Configurar la Aplicación en settings.py**
+
+Agrega la nueva aplicación al archivo `settings.py`:
+
+```python
 # settings.py
 INSTALLED_APPS = [
     ...
     'myhelloapp',
 ]
+```
 
-# Crear las migraciones para la nueva aplicación
+## **8. Realizar Migraciones**
+
+Genera las migraciones para la nueva aplicación:
+
+```bash
 python manage.py makemigrations myhelloapp
+```
 
-# Aplicar las migraciones
+## **9. Aplicar Migraciones**
+
+Aplica las migraciones al proyecto:
+
+```bash
 python manage.py migrate
+```
 
-# Crear dos archivos HTML básicos en la carpeta de plantillas de la aplicación
-# Crear un directorio "templates" en la carpeta de la aplicación "myhelloapp"
+## **10. Crear Archivos HTML Básicos**
+
+Crea dos archivos HTML básicos dentro del directorio de plantillas de la aplicación `myhelloapp`.
+
+```bash
 mkdir myhelloapp/templates
+```
 
-# Crear un archivo "template1.html" dentro del directorio "templates"
+### **Archivo template1.html**
+
+```html
 <!DOCTYPE html>
-<html lang='es'>
+<html lang="es">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template 1</title>
 </head>
 <body>
@@ -56,13 +109,16 @@ mkdir myhelloapp/templates
     </ul>
 </body>
 </html>
+```
 
-# Crear un archivo "template2.html" dentro del directorio "templates"
+### **Archivo template2.html**
+
+```html
 <!DOCTYPE html>
-<html lang='es'>
+<html lang="es">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Template 2</title>
 </head>
 <body>
@@ -72,8 +128,13 @@ mkdir myhelloapp/templates
     </ul>
 </body>
 </html>
+```
 
-# Modificar views.py dentro de la aplicación para renderizar los archivos HTML
+## **11. Modificar views.py**
+
+En el archivo `views.py` de la aplicación, agrega las funciones para renderizar los archivos HTML.
+
+```python
 # views.py
 from django.shortcuts import render
 
@@ -82,8 +143,13 @@ def template1(request):
 
 def template2(request):
     return render(request, 'template2.html')
+```
 
-# Crear urls.py dentro de la aplicación para definir las rutas
+## **12. Definir las Rutas**
+
+Crea un archivo `urls.py` dentro de la aplicación para definir las rutas.
+
+```python
 # urls.py
 from django.urls import path
 from . import views
@@ -92,8 +158,13 @@ urlpatterns = [
     path('template1/', views.template1, name='template1'),
     path('template2/', views.template2, name='template2'),
 ]
+```
 
-# Modificar urls.py en el directorio del proyecto para incluir las rutas de la aplicación
+## **13. Incluir las Rutas en el Proyecto**
+
+Modifica el archivo `urls.py` en el directorio del proyecto para incluir las rutas de la aplicación.
+
+```python
 # urls.py
 from django.urls import include, path
 
@@ -101,12 +172,34 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('myhelloapp/', include('myhelloapp.urls'))
 ]
+```
 
-# Ejecutar el servidor de desarrollo
+## **14. Ejecutar el Servidor de Desarrollo**
+
+Inicia el servidor de desarrollo para visualizar el proyecto:
+
+```bash
 python manage.py runserver
+```
 
-# Cerrar entorno virtual
+## **15. Desactivar el Entorno Virtual**
+
+Una vez que hayas terminado, desactiva el entorno virtual:
+
+```bash
 deactivate
+```
 
-# Crear archivo requiremenst.txt
+## **16. Crear archivo requirements.txt**
+
+Para documentar las dependencias del proyecto, genera un archivo `requirements.txt` con:
+
+```bash
 pip freeze > requirements.txt
+```
+
+¡Listo! Ahora estás listo para comenzar a desarrollar tu proyecto Django.
+
+--- 
+
+Este archivo README.md ha sido diseñado para proporcionar una guía clara y detallada para configurar y comenzar un proyecto Django de manera efectiva.
