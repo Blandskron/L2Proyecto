@@ -170,7 +170,7 @@ from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('proyecto2l2/', include('proyecto2l2.urls'))
+    path('myhelloapp/', include('myhelloapp.urls'))
 ]
 ```
 
