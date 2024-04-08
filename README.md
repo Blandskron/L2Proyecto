@@ -165,12 +165,12 @@ urlpatterns = [
 Modifica el archivo `urls.py` en el directorio del proyecto para incluir las rutas de la aplicación.
 
 ```python
-# urls.py
+from django.contrib import admin
 from django.urls import include, path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('myhelloapp/', include('myhelloapp.urls'))
+    path('proyecto2l2/', include('proyecto2l2.urls'))
 ]
 ```
 
